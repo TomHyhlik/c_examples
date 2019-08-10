@@ -1,0 +1,17 @@
+out 125,000,000 results (0.42 seconds) 
+Search Results
+Returning C string from a function - Stack Overflow
+https://stackoverflow.com/questions/1496313/returning-c-string-from-a-function
+Sep 30, 2009 - In C (& C++ for that matter), a string is just an array of bytes terminated ... const char * myFunction() { return "My String"; } int main() { const char* ...
+Returning string from C function - Stack Overflow
+https://stackoverflow.com/questions/25798977/returning-string-from-c-function
+Sep 12, 2014 - Either allocate the string on the stack on the caller side and pass it to your function: void getStr(char *wordd, int length) { ... } int main(void) { char ...
+How to return a string in my C code? - Stack Overflow
+https://stackoverflow.com/questions/4929329/how-to-return-a-string-in-my-c-code
+Feb 8, 2011 - If you are looking to return a string from a function(other than main), you should do something like this. #include <stdio.h> const char ...
+Returning a string from a function in C - Stack Overflow
+https://stackoverflow.com/questions/9378998/returning-a-string-from-a-function-in-c
+Feb 21, 2012 - You are returning a pointer to local data, which is not valid after the function returns. You have to allocate the string properly. This can be done ...
+How to pass a string as an argument to a function and return a string in C
+https://www.quora.com/How-can-I-pass-a-string-as-an-argument-to-a-function-and-retur...
+Simplest Solution The simplest solution to whatev
