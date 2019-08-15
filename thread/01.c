@@ -11,9 +11,11 @@
 // when its name is specified in pthread_create() 
 void *myThreadFun(void *vargp) 
 { 
-    sleep(1); 
-    printf("Printing GeeksQuiz from Thread \n"); 
-    return NULL; 
+	while (1)
+	{
+	    sleep(1); 
+	    printf("Printing GeeksQuiz from Thread \n"); 
+	}
 } 
    
 int main() 
