@@ -1,3 +1,9 @@
+/*
+reference:
+https://www.tutorialspoint.com/data_structures_algorithms/hash_table_program_in_c.htm
+*/
+
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -18,10 +24,16 @@ int hashCode(int key) {
    return key % SIZE;
 }
 
-struct DataItem *search(int key) {
+//////////////////////////////////////////////////////////
+struct DataItem *search(int key) 
+{
+   printf("Searching key: %d\n", key);
+
    //get the hash 
    int hashIndex = hashCode(key);  
-	
+
+   printf("hashIndex: %d\n", hashIndex);
+
    //move in array until an empty 
    while(hashArray[hashIndex] != NULL) {
 	
@@ -38,7 +50,9 @@ struct DataItem *search(int key) {
    return NULL;        
 }
 
-void insert(int key,int data) {
+//////////////////////////////////////////////////////////
+void insert(int key,int data) 
+{
 
    struct DataItem *item = (struct DataItem*) malloc(sizeof(struct DataItem));
    item->data = data;  
@@ -59,7 +73,9 @@ void insert(int key,int data) {
    hashArray[hashIndex] = item;
 }
 
-struct DataItem* delete(struct DataItem* item) {
+//////////////////////////////////////////////////////////
+struct DataItem* delete(struct DataItem* item) 
+{
    int key = item->key;
 
    //get the hash 
@@ -86,7 +102,10 @@ struct DataItem* delete(struct DataItem* item) {
    return NULL;        
 }
 
-void display() {
+
+//////////////////////////////////////////////////////////
+void display() 
+{
    int i = 0;
 	
    for(i = 0; i<SIZE; i++) {
@@ -100,7 +119,9 @@ void display() {
    printf("\n");
 }
 
-int main() {
+//////////////////////////////////////////////////////////
+int main() 
+{
    dummyItem = (struct DataItem*) malloc(sizeof(struct DataItem));
    dummyItem->data = -1;  
    dummyItem->key = -1; 
@@ -133,3 +154,4 @@ int main() {
       printf("Element not found\n");
    }
 }
+//////////////////////////////////////////////////////////
