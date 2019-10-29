@@ -1,3 +1,8 @@
+/*
+ * code taken from:
+ * http://www.kaushikbaruah.com/posts/data-structure-in-c-hashmap/
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -68,21 +73,33 @@ int lookup(struct table *t,int key)
     }
     return -1;
 }
+<<<<<<< HEAD
 
 ///////////////////////////////////////////////////////
 int main()
 {
 	printf("AppStart......................\n");
 
+=======
+int main(){
+	printf("AppStart................................\n");
+>>>>>>> master
     struct table *t = createTable(5);
 
     insert(t,2,3);
     insert(t,5,4);
+<<<<<<< HEAD
     insert(t,7,8);
 
     printf("%d\n",lookup(t,5));
 
 	printf("AppEnd......................\n");
+=======
+    printf("%d\n",lookup(t,5));
+
+	printf("AppEnd..................................\n");
+
+>>>>>>> master
     return 0;
 }
 
