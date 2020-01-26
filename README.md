@@ -1,6 +1,3 @@
 # c_examples
-some basic examples to play with
+some basic c examples for educational purposes
 
-
-## todo:
-json example
