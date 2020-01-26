@@ -1,3 +1,3 @@
 # c_examples
-some basic c examples for educational purposes
+Some basic c examples for educational purposes.
 
