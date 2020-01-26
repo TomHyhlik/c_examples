@@ -1,8 +1,0 @@
-	
-okay i used malloc and it works, type now contains "Content-Type: text/html; charset=UTF-8" i want to remove the say first 17 charachters from this string, how do i go about that?? – aDi Adam Jun 26 '13 at 16:00
-  	 	
-@aDiAdam: What do to is the string is less then 17 characters long? – alk Jun 26 '13 at 16:04
-  	 	
-@aDiAdam: {char * type = chkType(...); size_t n = MIN(17, strlen(type); memmove(type, type + n * sizeof(*type), n * sizeof(*type));} – alk Jun 26 '13 at 16:06 
-  	 	
-no what i want is a string "text/html; charset=UTF-8" so i can either copy 18th character onward from he string to another string. or i smhow delete the "Content-Type: " from the same string. and i am sorry i am a little rusty with the string library functions. can u please elaborate a little on the memove() part u have written. i will be very grateful – aDi Adam Jun 26 '13 at 16:19
