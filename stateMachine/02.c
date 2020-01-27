@@ -17,19 +17,23 @@ void* state_00();
 void* state_01();
 void* state_02();
 
+
 ///////////////////////////////////////////////
 void* state_00() {
-    printf("%s\n", __func__);
+    printf("state: %s\n", __func__);
     return state_01;   // next state
 }
+
 void* state_01() {
-    printf("%s\n", __func__);
+    printf("state: %s\n", __func__);
     return state_02;   // next state
 }
+
 void* state_02() {
-    printf("%s\n", __func__);
+    printf("state: %s\n", __func__);
     return NULL;       
 }
+
 ///////////////////////////////////////////////
 int main() 
 {

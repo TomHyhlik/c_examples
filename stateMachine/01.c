@@ -20,14 +20,17 @@ void state_00() {
     printf("%s\n", __func__);
     statefunc = state_01;   // next state
 }
+
 void state_01() {
     printf("%s\n", __func__);
     statefunc = state_02;   // next state
 }
+
 void state_02() {
     printf("%s\n", __func__);
     statefunc = NULL;       
 }
+
 ///////////////////////////////////////////////
 int main() 
 {

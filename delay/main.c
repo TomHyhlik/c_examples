@@ -23,7 +23,7 @@ void msleep(uint64_t milliseconds)
 
     pause = milliseconds*(CLOCKS_PER_SEC/1000);
     now = then = clock();
-    while( (now-then) < pause )
+    while ((now-then) < pause)
         now = clock();
 }
 //////////////////////////////////////////
