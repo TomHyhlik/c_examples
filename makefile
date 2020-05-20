@@ -9,7 +9,7 @@ BINARY = ./build/binary
 all: compile run
 
 compile:
-	$(CC) ./$(app).c -o $(BINARY) $(FLAGS)
+	$(CC) $(app).c -o $(BINARY) $(FLAGS)
 
 run:
 	$(BINARY)
