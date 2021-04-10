@@ -24,7 +24,6 @@ void bar(struct state * state){
     state->next = state->i < 10 ? foo : 0;
 }
 
-uint8_t 
 
 ////////////////////////////////////////////////////
 int main(void)
