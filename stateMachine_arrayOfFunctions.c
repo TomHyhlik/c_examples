@@ -73,7 +73,7 @@ SM_Parameters sm;
 int EntryState(int state)
 {
     int ret = 0;
-    if (state < 0 || state >= NUMBEROFSTATES)
+    if (state < 0 || state >= NUMBEROFSTATES || StateEntry[state] == NULL)
     {
         printf("ERROR: %s() Invalid stgate ID: %d\n", __func__, state);
         return -1;
@@ -84,6 +84,25 @@ int EntryState(int state)
     sm.currentStateId = state;
     /* Execute current state entry to initialize the system */
     ret |= StateEntry[state]();
+    return ret;
+}
+
+///////////////////////////////////////////////
+int DoState()
+{
+    int ret = 0;
+    sm.currentStateDoCtr++;
+
+    if (sm.currentStateId < 0 || 
+        sm.currentStateId >= NUMBEROFSTATES || 
+        StateDo[sm.currentStateId] == NULL)
+    {
+        printf("ERROR: Invalid state ID in func: %s\n", __func__);
+        return -1;
+    }
+
+    ret |= StateDo[sm.currentStateId]();
+
     return ret;
 }
 
@@ -104,23 +123,6 @@ int state_02_Entry()
 {
     PRINT_STATE_ENTRY;
     return 0;       
-}
-
-///////////////////////////////////////////////
-int DoState()
-{
-    int ret = 0;
-    sm.currentStateDoCtr++;
-
-    if (StateDo[sm.currentStateId] == NULL)
-    {
-        printf("ERROR: Invalid state ID in func: %s\n", __func__);
-        return -1;
-    }
-
-    ret |= StateDo[sm.currentStateId]();
-
-    return ret;
 }
 
 ///////////////////////////////////////////////
@@ -153,8 +155,8 @@ int state_02_Do()
     if (sm.currentStateDoCtr >= StateTransit_execCount[sm.currentStateId])
     {
         printf("SM_STOP\n");
-        return EntryState(10);
-        // while(1);
+        // return EntryState(10); // generate error
+        while(1);
     }
     return 0;
 }
@@ -164,13 +166,13 @@ int main()
 {
     printf("AppStart_______________________________\n");
 
-    /* Init SM to first state */
+    /* Init SM to some state */
     EntryState(STATE_00);
-
 
     /* Start SM */
     while (DoState() == 0);
 
+    printf("AppEnd_________________________________\n");
     return 0;
 }
 ///////////////////////////////////////////////
